@@ -1,0 +1,35 @@
+<head>
+  <title>popover-reproduction</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h2 class="total" data-placement="bottom" data-toggle="popover" data-container="body" data-trigger="hover">HELLO POPOVER (hover here)<H2>
+  <p>Here always work</p>
+{{>popover}}
+</template>
+
+<template name='popover'>
+  <table class='table table-hover'>
+          <thead>
+            <h4>Here works too</h4>
+            <tr>
+              <th>Détails</th>
+              <th>Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each displayPieces}}
+              <tr>
+                <td>{{itemName}}</td>
+                <td>{{itemPrice}}€</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+</template>
+
+
